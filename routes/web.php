@@ -12,4 +12,4 @@ Route::post('/user', function (RegisterRequest $request) {
 	$validated = $request->validated();
 
 	dd($validated);
-})->name('user.store');
+})->name('user.store')->middleware('throttle:3,1');
