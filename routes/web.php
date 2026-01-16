@@ -8,7 +8,7 @@ Route::get('/', function () {
 })->name('user.create');
 
 
-Route::post('/user', function (RegisterRequest $register) {
+Route::post('/user', function (RegisterRequest $request) {
 	$validated = $request->validated();
 
 	dd($validated);
