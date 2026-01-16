@@ -7,15 +7,6 @@ use Illuminate\Contracts\Validation\ValidationRule;
 
 class AntiSpam implements ValidationRule
 {
-	private array $blockedDomains = [
-		'mailinator.com',
-		'tempmail.com',
-		'10minutemail.com',
-		'teste.com.br',
-		'localhost.com.br',
-		'email.com.br',
-		'email.com',
-	];
 	/**
 	 * Run the validation rule.
 	 *
