@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Rules\AntiSpam;
 
 class RegisterRequest extends FormRequest
 {
@@ -23,7 +24,7 @@ class RegisterRequest extends FormRequest
 	{
 		return [
 			'name' => 'required',
-			'email' => ['required', 'unique:users', 'email:rfc,dns'],
+			'email' => ['required', new AntiSpam, 'unique:users', 'email', 'email:rfc,dns'],
 			'password' => 'required|min:3|max:10',
 		];
 	}
